@@ -1,0 +1,42 @@
+{% load static %}
+{% block body %}
+{% include "recruiter_navigation.html" %}
+<div class="container">
+  <h1>View All Jobs</h1>
+  <table id="example" class="table table-striped">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Title</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Salary</th>
+        <th>Location</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in job %}
+
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.start_date}}</td>
+        <td>{{i.end_date}}</td>
+        <td>{{i.salary}}</td>
+        <td>{{i.location}}</td>
+        <td> <img src="{{i.image.url}}" class="rounded mx-auto d-block" style="width: 200px; height: 200px;" alt=""> </td>
+        <td>
+          <a class="btn btn-success" href="{% url 'edit_jobdetail' i.id %}">Edit</a>|
+          <a class="btn btn-danger" onclick="return confirm('Are You Sure?')" href="{% url 'delete_job' i.id %}">Delete</a>
+
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load static %}
+{% block body %}
+{% include "navigation.html" %}
+<div class="container table-responsive-lg">
+  <h1>Latest Job List</h1>
+  <table id="example" class="table table-striped ">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Company Name</th>
+        <th>Job Title</th>
+        <th>Location</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in data %}
+
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.recruiter.company}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.location}}</td>
+        <td>{{i.start_date}}</td>
+        <td>{{i.end_date}}</td>
+        <td> <a class="btn btn-primary "href="{%url 'user_login' %}">Login to Apply</a> </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+
+</div>
+{% endblock %}

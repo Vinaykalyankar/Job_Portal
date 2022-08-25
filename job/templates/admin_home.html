@@ -1,0 +1,60 @@
+{% load static %}
+{% block body %}
+{% include "admin_navigation.html" %}
+<style>
+.mydiv{
+  background-color:  #ffcccb;
+  border: solid;
+}
+  .mydiv:hover {
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    transform: translate(-10px)
+
+  }
+</style>
+<div class="container mt-5">
+  <h1>Admin Home</h1>
+  <div class="row mt-5">
+    <div class="col-sm-6 mydiv">
+      <h4 class='text-center'>Total Recruiters </h4>
+      <p class='text-center font-weight-bold'>{{rcount}}</p>
+    </div>
+
+    <div class="col-sm-6 mydiv">
+      <h4 class='text-center'> Total Student Users </h4>
+      <p class='text-center font-weight-bold'>{{scount}}</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-sm-6 mydiv">
+      <h4 class='text-center'>Pending Recruiters </h4>
+      <p class='text-center font-weight-bold'>{{prcount}}</p>
+    </div>
+
+    <div class="col-sm-6 mydiv">
+      <h4 class='text-center'> Accepted Recruiters </h4>
+      <p class='text-center font-weight-bold'>{{arcount}}</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-sm-6 mydiv">
+      <h4 class='text-center'>Rejected Recruiters </h4>
+      <p class='text-center font-weight-bold'>{{rrcount}}</p>
+    </div>
+
+    <div class="col-sm-6 mydiv">
+      <h4 class='text-center'> Total Job Posts </h4>
+      <p class='text-center font-weight-bold'>{{jcount}}</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-sm-6 mydiv">
+      <h4 class='text-center'>Total Messages </h4>
+      <p class='text-center font-weight-bold'>{{mcount}}</p>
+    </div>
+
+
+
+  </div>
+
+{% endblock %}
